@@ -247,7 +247,7 @@ void LoadExtraPluginsFromDir(const char *initialdir)
 
 // Precache	stuff from force consistency calls
 // or check	for	pointed	files won't	be done
-int	C_PrecacheModel(char *s)
+int	C_PrecacheModel(const char *s)
 {
 	if (!g_forcedmodules)
 	{
@@ -262,7 +262,7 @@ int	C_PrecacheModel(char *s)
 	RETURN_META_VALUE(MRES_IGNORED, 0);
 }
 
-int	C_PrecacheSound(char *s)
+int	C_PrecacheSound(const char *s)
 {
 	if (!g_forcedsounds)
 	{
@@ -1223,7 +1223,7 @@ void C_TraceLine_Post(const float *v1, const float *v2, int fNoMonsters, edict_t
 	RETURN_META(MRES_IGNORED);
 }
 
-void C_AlertMessage(ALERT_TYPE atype, char *szFmt, ...)
+void C_AlertMessage(ALERT_TYPE atype, const char *szFmt, ...)
 {
 	if (atype != at_logged)
 	{
@@ -1267,7 +1267,7 @@ void C_AlertMessage(ALERT_TYPE atype, char *szFmt, ...)
     RETURN_META(MRES_IGNORED);
 }
 
-void C_ChangeLevel(char *map, char *what)
+void C_ChangeLevel(const char *map, const char *what)
 {
 	int ret = executeForwards(FF_ChangeLevel,  map);
 	if (ret)

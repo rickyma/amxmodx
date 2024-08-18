@@ -1,14 +1,14 @@
 #(C)2004-2005 AMX Mod X Development Team
 # Makefile written by David "BAILOPAN" Anderson
 
-HLSDK = ../../../hlsdk
-MM_ROOT = ../../metamod/metamod
+HLSDK = ../../../hlsdk/multiplayer
+MM_ROOT = ../../../metamod/metamod
 
 ### EDIT BELOW FOR OTHER PROJECTS ###
 
 OPT_FLAGS = -O2 -funroll-loops -s -pipe -fomit-frame-pointer -fno-strict-aliasing
 DEBUG_FLAGS = -g -ggdb3
-CPP = gcc-4.1
+CPP = gcc
 NAME = cstrike
 
 BIN_SUFFIX_32 = amxx_i386.so

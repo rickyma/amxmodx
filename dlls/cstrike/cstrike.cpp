@@ -44,7 +44,7 @@ bool UTIL_IsPlayer(AMX* amx, edict_t* pPlayer) {
 	return player;
 }
 
-void UTIL_TextMsg_Generic(edict_t* pPlayer, char* message)
+void UTIL_TextMsg_Generic(edict_t* pPlayer, const char* message)
 {
 	MESSAGE_BEGIN(MSG_ONE, GET_USER_MSG_ID(PLID, "TextMsg", NULL), NULL, pPlayer);
 	WRITE_BYTE(HUD_PRINTCENTER); // 1 = console, 2 = console, 3 = chat, 4 = center
@@ -741,13 +741,11 @@ static cell AMX_NATIVE_CALL cs_set_user_defusekit(AMX *amx, cell *params) // cs_
 
 		pPlayer->v.body = 1;
 
-		char* icon;
+		const char* icon = "defuser";
 		if (params[6] != -1)
 		{
 			int len;
 			icon = MF_GetAmxString(amx, params[6], 1, &len);
-		} else {
-			icon = "defuser";
 		}
 
 		*defusekit |= HAS_DEFUSE_KIT;

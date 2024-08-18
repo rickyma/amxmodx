@@ -127,7 +127,7 @@ CAmxxReader::CAmxxReader(const char *filename, int cellsize)
 		
 		for (mint8_t i = 0; i < m_Bh.numPlugins; i++)
 		{
-			pe = &(m_Bh.plugins[i]);
+                        pe = &(m_Bh.plugins[(unsigned)i]);
 			DATAREAD(&pe->cellsize, sizeof(mint8_t), 1);
 			DATAREAD(&pe->disksize, sizeof(int32_t), 1);
 			DATAREAD(&pe->imagesize, sizeof(int32_t), 1);
@@ -137,7 +137,7 @@ CAmxxReader::CAmxxReader(const char *filename, int cellsize)
 		
 		for (mint8_t i = 0; i < m_Bh.numPlugins; i++)
 		{
-			pe = &(m_Bh.plugins[i]);
+                        pe = &(m_Bh.plugins[(unsigned)i]);
 			
 			if (pe->cellsize == m_CellSize)
 			{

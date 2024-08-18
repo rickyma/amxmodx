@@ -105,7 +105,7 @@ void report_error(int code, char* fmt, ...)
 	}
 }
 
-void print_srvconsole(char *fmt, ...)
+void print_srvconsole(const char *fmt, ...)
 {
 	va_list argptr;
 	static char string[384];
@@ -717,7 +717,7 @@ void get_modname(char* buffer)
 	strcpy(buffer, g_mod_name.c_str());
 }
 
-char* build_pathname(char *fmt, ...)
+char* build_pathname(const char *fmt, ...)
 {
 	static char string[256];
 	int b;
@@ -750,7 +750,7 @@ char* build_pathname(char *fmt, ...)
 	return string;
 }
 
-char *build_pathname_r(char *buffer, size_t maxlen, char *fmt, ...)
+char *build_pathname_r(char *buffer, size_t maxlen, const char *fmt, ...)
 {
 	snprintf(buffer, maxlen, 
 #ifdef __linux__
@@ -782,7 +782,7 @@ char *build_pathname_r(char *buffer, size_t maxlen, char *fmt, ...)
 }
 
 // build pathname based on addons dir
-char* build_pathname_addons(char *fmt, ...)
+char* build_pathname_addons(const char *fmt, ...)
 {
 	static char string[256];
 

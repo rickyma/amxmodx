@@ -990,7 +990,7 @@ static cell AMX_NATIVE_CALL get_user_team(AMX *amx, cell *params) /* 3 param */
 			
 			if (params[3])
 			{
-				char *szTeam = "";
+				const char *szTeam = "";
 				
 				switch (iTeam)
 				{

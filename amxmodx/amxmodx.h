@@ -132,7 +132,7 @@ int UTIL_ReadFlags(const char* c);
 void UTIL_ClientPrint(edict_t *pEntity, int msg_dest, char *msg);
 void UTIL_FakeClientCommand(edict_t *pEdict, const char *cmd, const char *arg1 = NULL, const char *arg2 = NULL);
 void UTIL_GetFlags(char* flags, int flag);
-void UTIL_HudMessage(edict_t *pEntity, const hudtextparms_t &textparms, char *pMessage);
+void UTIL_HudMessage(edict_t *pEntity, const hudtextparms_t &textparms, const char *pMessage);
 void UTIL_IntToString(int value, char *output);
 void UTIL_ShowMOTD(edict_t *client, char *motd, int mlen, const char *name);
 void UTIL_ShowMenu(edict_t* pEntity, int slots, int time, char *menu, int mlen);
@@ -270,8 +270,8 @@ void modules_callPluginsUnloaded();
 void modules_callPluginsUnloading();
 
 cell* get_amxaddr(AMX *amx, cell amx_addr);
-char* build_pathname(char *fmt, ...);
-char* build_pathname_r(char *buffer, size_t maxlen, char *fmt, ...);
+char* build_pathname(const char *fmt, ...);
+char* build_pathname_r(char *buffer, size_t maxlen, const char *fmt, ...);
 char* format_amxstring(AMX *amx, cell *params, int parm, int& len);
 AMX* get_amxscript(int, void**, const char**);
 const char* get_amxscriptname(AMX* amx);
@@ -286,8 +286,8 @@ int unload_amxscript(AMX* amx, void** program);
 
 void copy_amxmemory(cell* dest, cell* src, int len);
 void get_modname(char*);
-void print_srvconsole(char *fmt, ...);
-void report_error(int code, char* fmt, ...);
+void print_srvconsole(const char *fmt, ...);
+void report_error(int code, const char* fmt, ...);
 void* alloc_amxmemory(void**, int size);
 void free_amxmemory(void **ptr);
 // get_localinfo
